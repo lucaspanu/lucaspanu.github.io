@@ -21,7 +21,7 @@ import { MeshLineGeometry, MeshLineMaterial } from "meshline";
 import badge from "../static/textures/blueAlbaBadge.png";
 
 extend({ MeshLineGeometry, MeshLineMaterial });
-useGLTF.preload("../static/glb/tag.glb");
+useGLTF.preload("glb/tag.glb");
 useTexture.preload(badge);
 
 export default function App() {
@@ -76,7 +76,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
     angularDamping: 2,
     linearDamping: 2,
   };
-  const { nodes, materials } = useGLTF("../static/glb/tag.glb");
+  const { nodes, materials } = useGLTF("glb/tag.glb");
   const texture = useTexture(badge);
   const { width, height } = useThree((state) => state.size);
   const [curve] = useState(
